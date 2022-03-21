@@ -1,0 +1,11 @@
+<h2>Data Items</h2>
+
+<ul class="dataitem">
+    <li *ngFor="let item of items">
+        {{item.label}}: {{item.value}} - ({{item.length}},{{item.height}})
+    </li>
+</ul>
+
+<a  routerLink="/add">Add new item</a>
+<br>
+<button (click)="reset()">Reset</button>

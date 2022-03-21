@@ -1,0 +1,36 @@
+<h2>Add New Item</h2>   
+
+<div style="background-color: aliceblue;">
+<p>Toteuta tähän sivu, joka kysyy uuden tietueen tarvitsemat tiedot: Label, value, length, height.
+    Näiden tietojen täytyy toteuttaa seuraavat ehdot:</p>
+
+<ol>
+<li>Label kentässä pitää olla arvo.
+</li>
+<li>
+    Value numeron pitää olla isompi kuin BackendService.getMinimunValue()
+</li>
+<li>
+    Length ja height pitää olla positiivisia lukuja.
+</li>
+</ol>
+
+<p>Sivulle tulee Value kentän arvon generoiva painike 'Generoi', joka generoi Value kentän
+    arvon siten että</p>
+    <ul>
+        <li> jos length on suurempi kuin height ja lisäksi length on suurempi kuin minimiarvo, niin Value = length+height</li>
+        <li> jos length on pienempi kuin kuin height, niin  Value = miniarvo+length</li>
+        <li> muutoin  Value = kaikkien jo lisättyen tietueiden value arvojen summa, mutta kuitenkin vähintään minimiarvo.</li>    
+    </ul>
+    jossa minimiarvo = BackendService.getMinimunValue(), 
+    kaikki jo lisätyt tietueet of BackendService:een talletetut tietueet,
+    ja muut arvot vastaavat sivulla lomakkeessa olevia arvoja.
+
+<p> Lisäksi sivulle tulee kaksi painiketta: Peru ja Lisää. Peru palaa takaisin dashboard sivulle
+     ilman muutoksia. Lisää -painike lisää uuden tietueen, ja siirtyy  dashboard sivulle.</p>
+
+<p> Muotoile sivua asiallisen näköiseksi käyttäen vapaasti suoraan CSS tyylejä tai Bootstrap:ia tms.</p>
+</div>
+
+
+Label: <input type="text" [(ngModel)]="item.label"  #label="ngModel">
