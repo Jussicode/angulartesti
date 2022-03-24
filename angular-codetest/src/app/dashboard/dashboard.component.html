@@ -1,5 +1,7 @@
-<h2>Data Items</h2>
 
+<div class="dataitemwr">
+    <div class="datalist">
+    <h2>Data Items</h2>
 <ul class="dataitem">
     <li *ngFor="let item of items">
         {{item.label}}: {{item.value}} - ({{item.length}},{{item.height}})
@@ -8,4 +10,7 @@
 
 <a  routerLink="/add">Add new item</a>
 <br>
-<button (click)="reset()">Reset</button>
+<button class="onSubmit" (click)="reset()">Reset</button>
+<button class="backbutton" type="submit" (click)="switchPage2()">Lisää</button>
+</div>
+</div>

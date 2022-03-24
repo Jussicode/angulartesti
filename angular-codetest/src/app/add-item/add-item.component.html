@@ -1,36 +1,24 @@
+
 <h2>Add New Item</h2>   
 
-<div style="background-color: aliceblue;">
-<p>Toteuta tähän sivu, joka kysyy uuden tietueen tarvitsemat tiedot: Label, value, length, height.
-    Näiden tietojen täytyy toteuttaa seuraavat ehdot:</p>
+<div id="boxi">
+    
+Label: <input type="text" [(ngModel)]="item.label" id="name" #label="ngModel" required>
+Value: <input  id="nm" type="number" [(ngModel)]="item.value" min="{{ backend.getMinimunValue() }}" #value="ngModel">
 
-<ol>
-<li>Label kentässä pitää olla arvo.
-</li>
-<li>
-    Value numeron pitää olla isompi kuin BackendService.getMinimunValue()
-</li>
-<li>
-    Length ja height pitää olla positiivisia lukuja.
-</li>
-</ol>
+<button class="onGen" type="submit" name="generoi" (click)="onSubmitGenerate()"><i class="fa fa-gear" aria-hidden="true"></i>Generoi</button><br />
 
-<p>Sivulle tulee Value kentän arvon generoiva painike 'Generoi', joka generoi Value kentän
-    arvon siten että</p>
-    <ul>
-        <li> jos length on suurempi kuin height ja lisäksi length on suurempi kuin minimiarvo, niin Value = length+height</li>
-        <li> jos length on pienempi kuin kuin height, niin  Value = miniarvo+length</li>
-        <li> muutoin  Value = kaikkien jo lisättyen tietueiden value arvojen summa, mutta kuitenkin vähintään minimiarvo.</li>    
-    </ul>
-    jossa minimiarvo = BackendService.getMinimunValue(), 
-    kaikki jo lisätyt tietueet of BackendService:een talletetut tietueet,
-    ja muut arvot vastaavat sivulla lomakkeessa olevia arvoja.
+Length: <input  id="fname" type="number"  [(ngModel)]="item.length" min="0" #length="ngModel">
+Height: <input type="number" id="nm" [(ngModel)]="item.height" min="0" #height="ngModel">
 
-<p> Lisäksi sivulle tulee kaksi painiketta: Peru ja Lisää. Peru palaa takaisin dashboard sivulle
-     ilman muutoksia. Lisää -painike lisää uuden tietueen, ja siirtyy  dashboard sivulle.</p>
+<button class="onSubmit" type="submit" (click)="onSubmit()" [disabled]="value.invalid || label.invalid || length.invalid || height.invalid">Submit</button>
+<button class="backbutton" type="submit" (click)="switchPage()">Back</button>
 
-<p> Muotoile sivua asiallisen näköiseksi käyttäen vapaasti suoraan CSS tyylejä tai Bootstrap:ia tms.</p>
+<div *ngIf="label.invalid && (label.dirty || label.touched)">
+<div *ngIf="label.errors?.['required']">
+<br />Name is required.
+
 </div>
 
-
-Label: <input type="text" [(ngModel)]="item.label"  #label="ngModel">
+</div>
+</div>

@@ -1,1 +1,99 @@
-/* You can add global styles to this file, and also import other style files */
+/* Body & Content */
+
+body {
+    background-color:#f1f1f1;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("assets/formbg.jpg");
+  }
+
+h2 {
+    text-align: center;
+}
+
+input[type=text],[type=number] {
+    width:100%;
+    border:2px solid #aaa;
+    border-radius:5px;
+    margin:3px 0;
+    outline:none;
+    padding:8px;
+    box-sizing:border-box;
+    transition:.3s;
+}
+
+#boxi {
+    margin: 0 auto;
+    padding: 1.5em;
+    max-width: 420px;
+    height: auto;
+    border-radius: 5px;
+    background-image: linear-gradient(45deg, #ebf5e9 25%, #ffffff 25%, #ffffff 50%, #ebf5e9 50%, #ebf5e9 75%, #ffffff 75%, #ffffff 100%);
+    background-size: 56.57px 56.57px;
+    -webkit-box-shadow: 0px 0px 5px #757575;
+    -moz-box-shadow: 0px 0px 5px #757575;
+    box-shadow: 0px 0px 5px #757575;
+}
+
+.dataitemwr {
+    width: 100%;
+    text-align: center;
+}
+
+.datalist {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 15px;
+    background-image: linear-gradient(45deg, #f3fff1 25%, #ffffff 25%, #ffffff 50%, #e0ebde 50%, #ebf5e9 75%, #ffffff 75%, #ffffff 100%);
+    background-size: 56.57px 56.57px;
+    -webkit-box-shadow: 0px 0px 5px #757575;
+    -moz-box-shadow: 0px 0px 5px #757575;
+    box-shadow: 0px 0px 5px #757575;
+}
+
+/* Buttons */
+
+  button {
+    display: inline-block;
+    padding: 15px 25px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 3px #999;
+  }
+  
+  button:hover { 
+    background-color: #3e8e41
+}
+  
+  button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px rgb(109, 109, 109);
+    transform: translateY(2px);
+  }
+
+  .onGen {
+    padding: 0 15px 0 15px;
+    margin: 20px 0 20px 0;
+  }
+
+  .onSubmit {
+    padding: 0 15px 0 15px;
+    margin: 20px 0 0 0;
+  }
+
+  .backbutton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 320px;
+    padding: 0 15px 0 15px;
+    margin: 10px auto;
+}
+
